@@ -4,10 +4,10 @@ frameworkVersion: '2'
 
 provider:
   name: aws
-  region: eu-west-1
-  runtime: nodejs12.x
+  region: us-east-1
+  runtime: nodejs14.x
   # setup profile for AWS CLI.
-  # profile: node-aws
+  profile: default
 
 plugins:
   - serverless-finch
@@ -18,8 +18,9 @@ plugins:
 
 custom:
   client:
-    bucketName: node-in-aws-web-bucket
+    bucketName: dragos-shop-vue-vuex-cloudfront
     distributionFolder: build
+    indexDocument: index.html
   s3BucketName: ${self:custom.client.bucketName}
 
   ## Serverless-single-page-app-plugin configuration:
