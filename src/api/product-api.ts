@@ -5,6 +5,11 @@ import { Product } from '@/models/product';
 
 import productList from './productList.json';
 
+const setToken = async () => {
+	// eslint-disable-next-line prettier/prettier
+	localStorage.setItem('credentials', 'DragosAndrei99:TEST_PASSWORD')
+};
+
 const fetchAvailableProducts = async (): Promise<Product[]> => {
 	return axios
 		.get(`${API_PATHS.product}/products`)
@@ -51,4 +56,5 @@ export const productApi = {
 	fetchProducts,
 	fetchProductById,
 	saveProduct,
+	setToken,
 };

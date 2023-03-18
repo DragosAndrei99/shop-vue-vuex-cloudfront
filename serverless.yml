@@ -18,7 +18,7 @@ plugins:
 
 custom:
   client:
-    bucketName: dragos-shop-vue-vuex-cloudfront
+    bucketName: dragos-shop-vue-vuex-cloudfront-2
     distributionFolder: build
     indexDocument: index.html
   s3BucketName: ${self:custom.client.bucketName}
