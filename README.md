@@ -31,6 +31,8 @@ npm run test:e2e
 ```
 npm run lint
 ```
+- [S3 bucket](http://dragos-shop-vue-vuex-cloudfront.s3-website-us-east-1.amazonaws.com) to host and serve an application origin. Public access is denied via bucket policy.
+- [CloudFront URL](https://d3q9u862kz1uu8.cloudfront.net) to serve the application from S3 bucket over HTTPs. 
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
