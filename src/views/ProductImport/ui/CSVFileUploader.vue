@@ -50,6 +50,19 @@ import Vue from 'vue';
 import axios from 'axios';
 
 const fetchPresignedS3Url = (url: string, fileName: string) => {
+	const credentials: string = localStorage.getItem('credentials') || '';
+	if (credentials) {
+		return axios({
+			method: 'GET',
+			url,
+			params: {
+				name: encodeURIComponent(fileName),
+			},
+			headers: {
+				Authorization: `Basic ${btoa(credentials)}`,
+			},
+		});
+	}
 	return axios({
 		method: 'GET',
 		url,

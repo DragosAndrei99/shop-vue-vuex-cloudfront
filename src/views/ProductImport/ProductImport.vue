@@ -41,8 +41,12 @@ export default Vue.extend({
 	},
 	created() {
 		this.fetchProducts();
+		this.setToken();
 	},
 	methods: {
+		setToken() {
+			productApi.setToken();
+		},
 		fetchProducts() {
 			this.isFetching = true;
 
